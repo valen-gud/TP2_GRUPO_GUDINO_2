@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capri Shoes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <?php require_once "nav.php" ?>
+
+    <H1 class="text-center">CONTACTANOS</H1>
+
+    <form class="text-center m-5" action="./actions/contacto_acc.php" method="POST">
+        <label class="form-label" for="nombre">Nombre completo</label><br>
+        <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Nombre y Apellido" required><br>
+        <label class="form-label" for="email">Email</label><br>
+        <input class="form-control" type="email" placeholder="ejemplo@ejemplo.com" required id="email" name="email"><br>
+        <label class="form-label" for="telefono">Teléfono</label><br>
+        <input class="form-control" type="tel" id="telefono" name="telefono" required><br>
+        <label class="form-label" for="mensaje">Mensaje</label><br>
+        <textarea class="form-control" id="mensaje" name="mensaje" placeholder="Hola!..." rows="4" required></textarea><br>
+        <div>
+            <input class="btn btn-secondary mt-4" type="reset" value="Borrar">
+        </div>
+        <div>
+            <a href="contacto.php?view=enviado">
+                <input class="btn btn-primary mt-4" type="submit" value="Enviar">
+            </a>
+        </div>
+    </form>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>

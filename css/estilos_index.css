@@ -1,0 +1,20 @@
+.cardProducto {
+   &:hover {
+      box-shadow: 3px 3px 10px gray
+   }
+
+   .card-body {
+      .precio {
+         color: rgb(185, 144, 224);
+      }
+      .botonComprar{
+         color: white;
+         background-color:rgb(185, 144, 224) ;
+         border-color:rgb(185, 144, 224) ;
+         &:hover{
+            background-color: rgb(207, 184, 227) ;
+            border-color:rgb(207, 184, 227) ;
+         }
+      }
+   }
+}

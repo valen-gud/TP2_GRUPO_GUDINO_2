@@ -1,0 +1,12 @@
+.barraDeNavegacion{
+    background-color: #e7e7e7;
+    .imgLogo{
+        width: 150px;
+    }
+    .nav-link{
+        color: black;
+        &:hover{
+            color: gray;
+        }
+    }
+}
