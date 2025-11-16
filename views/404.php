@@ -17,6 +17,9 @@
     </video>
     </section>
     <section class="overlay"></section>
-    <section class="titulo-error">PAGINA NO ENCONTRADA</section>
+    <section class="titulo-error">
+        <h1>PAGINA NO ENCONTRADA</h1>
+        <a href="../index.php" class="btn botonVolver  w-100">Volever a inicio</a>
+    </section>
     
 </main>
