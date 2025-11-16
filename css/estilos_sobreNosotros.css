@@ -1,0 +1,23 @@
+.nosotrasTexto {
+    .parrafoNosotras{
+        margin-bottom: 30px;
+    }
+}
+
+.imgNosotras{
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*.carrusel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.carrusel .carousel {
+    width: 500px;    
+    margin: 0 auto;   
+}*/

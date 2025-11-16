@@ -1,12 +1,12 @@
 .barraDeNavegacion{
-    background-color: #e7e7e7;
+    background-color:#e7e7e7;
     .imgLogo{
         width: 150px;
     }
     .nav-link{
         color: black;
         &:hover{
-            color: gray;
+            color:rgb(185, 144, 224);
         }
     }
 }

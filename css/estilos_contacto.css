@@ -1,0 +1,18 @@
+.btnEnviar {
+    color: white;
+    background-color: rgb(185, 144, 224);
+
+    &:hover {
+        color: white;
+        background-color: rgb(207, 184, 227);
+    }
+}
+
+.btnBorrar{
+     color:#6c757d;
+     border-color: #6c757d6e;
+
+    &:hover {
+        color: rgb(185, 144, 224);
+    }
+}

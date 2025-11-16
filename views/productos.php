@@ -17,15 +17,15 @@ $totalPaginas = ceil($totalProductos / $limite);
 <div class=" divPaginado mt-5 justify-content-center">
     <nav aria-label=" paginadoNav Page navigation example">
         <ul class=" paginado pagination justify-content-center">
-            <li class="page-item paginadoItem <?= $pagina <= 1 ? 'disabled' : '' ?>">
+            <li class="page-item paginadoItem <?= $pagina <= 1 ? 'disabled' : '' ?>"> <!-- si la pagina es menor o igual a 1 que se vea desactivado-->
                 <a class="page-link " href="index.php?view=productos&pagina=<?= $pagina - 1 ?>" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
-            <li class="paginadoItem page-item <?= $pagina == 1 ? 'active' : '' ?>">
+            <li class="paginadoItem page-item <?= $pagina == 1 ? 'active' : '' ?>"> 
                 <a class="paginadoLink page-link" href="index.php?view=productos&pagina=1">1</a>
             </li>
-            <li class="page-item <?= $pagina == 2 ? 'active' : '' ?>">
+            <li class="page-item <?= $pagina == 2 ? 'active' : '' ?>"> <!-- si la pagina es igual al num de pag, que se muestre el paginado activo en color gris-->
                 <a class="page-link" href="index.php?view=productos&pagina=2">2</a>
             </li>
             <li class="page-item <?= $pagina == 3 ? 'active' : '' ?>">
@@ -34,8 +34,11 @@ $totalPaginas = ceil($totalProductos / $limite);
             <li class="page-item <?= $pagina == 4 ? 'active' : '' ?>">
                 <a class="page-link" href="index.php?view=productos&pagina=4">4</a>
             </li>
-            <li class="page-item <?= $pagina >= $totalPaginas ? 'disabled' : '' ?>">
-                <a class="page-link" href="index.php?view=productos&pagina=<?= $pagina + 1 ?> "  aria-label="Next">
+            <li class="page-item <?= $pagina == 5 ? 'active' : '' ?>">
+                <a class="page-link" href="index.php?view=productos&pagina=5">5</a>
+            </li>
+            <li class="page-item <?= $pagina >= $totalPaginas ? 'disabled' : '' ?>"> <!-- si la pagina es mayor o igual al total de las paginas que se vea desactivado-->
+                <a class="page-link" href="index.php?view=productos&pagina=<?= $pagina + 1 ?> "  aria-label="Next"> 
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>

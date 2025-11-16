@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="./css/estilos_nav.css">
 
 
@@ -12,7 +13,7 @@
           <a class="nav-link " href="index.php?view=home">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="sobre_nosotros.php">Sobre nosotros</a>
+          <a class="nav-link" href="sobre_nosotros.php">Sobre nosotras</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="contacto.php">Contacto</a>

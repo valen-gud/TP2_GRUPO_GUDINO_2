@@ -1,0 +1,16 @@
+.nav .nav-link {
+    color:#6c757d;
+
+    &:hover {
+        color: rgb(185, 144, 224);
+    }
+}
+.text-footer{
+    margin-bottom: 0;
+}
+.footer{
+    background-color:#e7e7e76d;
+    margin-top: 70px;
+    margin-bottom: 0;
+    padding: 20px 0px 20px 0px;
+}
