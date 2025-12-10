@@ -1,0 +1,46 @@
+.container {
+
+    .cardProducto {
+        &:hover {
+            box-shadow: 3px 3px 10px gray;
+        }
+
+        .card-body {
+            .precio {
+                color: rgb(185, 144, 224);
+            }
+
+            .botonComprar {
+                color: white;
+                background-color: rgb(185, 144, 224);
+                border-color: rgb(185, 144, 224);
+
+                &:hover {
+                    background-color: rgb(207, 184, 227);
+                    border-color: rgb(207, 184, 227);
+                }
+            }
+        }
+    }
+
+    .divPaginado {
+
+        .page-link {
+            color: rgb(185, 144, 224);
+
+            &:hover {
+                color: rgb(207, 184, 227);
+            }
+        }
+
+    }
+
+    .page-item.active .page-link {
+        background-color: rgb(191, 191, 191) !important;
+        /* fondo del botón activo */
+        border-color: rgb(191, 191, 191) !important;
+        /* borde del botón activo */
+        color: #fff !important;
+        /* color del texto */
+    }
+}
