@@ -1,4 +1,4 @@
-<?php //INDEX ORIGINAL copiado para el final -----------------------------------------------------
+<?php //INDEX ORIGINAL copiado para el final este quedo viejo (avisado el 11/12)-----------------------------------------------------
 
 require_once "class/conexion.php";
 require_once "class/producto.php";

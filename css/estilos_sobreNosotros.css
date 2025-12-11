@@ -1,13 +1,31 @@
-.nosotrasTexto {
-    .parrafoNosotras{
-        margin-bottom: 30px;
+.nosotrasTexto .parrafoNosotras {
+    margin-bottom: 30px;
+}
+
+section.nosotras {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: nowrap; 
+}
+
+.imgNosotras {
+    width: 100%;
+    max-width: 400px;
+    height: 350px;     
+    object-fit: cover; 
+    border-radius: 5px;
+}
+
+/* Responsive: en mobile sí pasan a columna */
+@media (max-width: 768px) {
+    section.nosotras {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imgNosotras {
+        max-width: 90%;
+        height: auto;   
     }
 }
-
-.imgNosotras{
-    width: 500px;
-    justify-content: center;
-    align-items: center;
-}
-
-

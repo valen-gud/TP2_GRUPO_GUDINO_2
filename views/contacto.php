@@ -6,12 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capri Shoes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/estilos_contacto.css">
+    <link rel="stylesheet" href="../css/estilos_contacto.css">
+    <?php //vista solo de usuiarios compradores ------------
+
+    session_start();
+
+    if (!isset($_SESSION['rol']) || $_SESSION['rol'] != 'usuario') {
+        header("Location: index.php");
+        exit();
+    } ?>
 </head>
 
 <body>
     <header>
-        <?php require_once "nav.php" ?>
+        <?php require_once "../componentes/nav.php" ?>
     </header>
 
     <main>
@@ -28,7 +36,7 @@
 
             <label class="form-label" for="mensaje">Mensaje</label><br>
             <textarea class="form-control" id="mensaje" name="mensaje" placeholder="Hola!..." rows="4" required minlength="6"></textarea><br>
-            
+
             <div>
                 <input class="btn btnEnviar mt-4" type="submit" value="Enviar">
             </div>
@@ -39,7 +47,7 @@
     </main>
 
     <footer>
-        <?php require_once "footer.php" ?>
+        <?php require_once "../componentes/footer.php" ?>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

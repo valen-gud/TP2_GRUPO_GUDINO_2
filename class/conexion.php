@@ -1,6 +1,7 @@
 <?php
 
-class Conexion{
+class Conexion
+{
 
 
     private $servidor = "localhost";
@@ -9,13 +10,21 @@ class Conexion{
     private $dbname = "caprishoes";
     private $conn = null;
 
-    public function __construct(){
-        $dsn = "mysql:host=$this->servidor;dbname=$this->dbname";
-        $this->conn = new PDO($dsn, $this->usuario, $this->pass);
-        $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    public function __construct()
+    {
+        try {
+            $dsn = "mysql:host={$this->servidor};dbname={$this->dbname}";
+            $this->conn = new PDO($dsn, $this->usuario, $this->pass);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            require_once "funciones.php";
+            mostrarError404();
+        }
     }
-    
-    public function getConexion(){
+
+
+    public function getConexion()
+    {
         return $this->conn;
     }
 }

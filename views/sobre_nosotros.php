@@ -6,13 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capri Shoes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/estilos_sobreNosotros.css">
+    <link rel="stylesheet" href="../css/estilos_sobreNosotros.css">
     
+<?php //vista solo de usuiarios compradores ------------
+
+session_start();
+
+if (!isset($_SESSION['rol']) || $_SESSION['rol'] != 'usuario') {
+    header("Location: index.php");
+    exit();
+} ?>
+
+
+
 </head>
 
 <body>
     <header>
-        <?php require_once "nav.php" ?>
+        <?php require_once "../componentes/nav.php" ?>
     </header>
 
     <main>
@@ -32,13 +43,22 @@
             </div>
         </section>
 
-        <section class="d-flex container-fluid">
-            <img class="imgNosotras" src="./img/nosotras1.jpg" class="img-thumbnail" alt="...">
-            <img class="imgNosotras" src="./img/nosotras2.jpg" class="img-thumbnail" alt="...">
-            <img class="imgNosotras" src="./img/nosotras3.jpg" class="img-thumbnail" alt="...">
+        <section class="container-fluid">
+            <div class="row nosotras">
+                <div class="col-12 col-md-4 d-flex justify-content-center">
+                    <img class="imgNosotras img-thumbnail" src="../img/nosotras1.jpg" alt="img1">
+                </div>
+                <div class="col-12 col-md-4 d-flex justify-content-center">
+                    <img class="imgNosotras img-thumbnail" src="../img/nosotras2.jpg" alt="img2">
+                </div>
+                <div class="col-12 col-md-4 d-flex justify-content-center">
+                    <img class="imgNosotras img-thumbnail" src="../img/nosotras3.jpg" alt="img3">
+                </div>
+            </div>
         </section>
+
         <footer>
-            <?php require_once "footer.php" ?>
+            <?php require_once "../componentes/footer.php" ?>
         </footer>
 
 
