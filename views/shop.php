@@ -1,5 +1,3 @@
-
-
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link rel="stylesheet" href="../css/estilos_shop.css">
 
@@ -9,15 +7,16 @@
 // vista solo de usuarios compradores --------------
 session_start();
 
-if (!isset($_SESSION['rol']) || $_SESSION['rol'] != 'usuario') {
-    header("Location: index.php");
-    exit();
+if (!isset($_SESSION['usuario'])) {
+    header("Location: ../index.php");
+    exit;
 }
+
 
 require_once "../class/conexion.php";
 require_once "../class/producto.php";
 require_once "../componentes/nav.php";
-require_once "../class/funciones.php";  
+require_once "../class/funciones.php";
 
 
 
@@ -41,7 +40,6 @@ try {
     if (!$productos) {
         mostrarError404();
     }
-
 } catch (Exception $e) {
     // ⭐ Error en conexión o consulta → 404
     mostrarError404();

@@ -16,7 +16,7 @@
             <h1 class="h1">PÁGINA NO ENCONTRADA </h1>
             <h2 class="h2"><span class="spanParrafo">Estamos trabajando para solucionarlo</span></h2>
             <p class="parrafo">Hacé clic en la imagen para volver al inicio</p>
-           <a href="./shop.php">
+           <a href="../index.php">
             <img class="imgError" src="../img/imgError.jpeg" alt="Error404" title="Error 404">
            </a> 
         </section>

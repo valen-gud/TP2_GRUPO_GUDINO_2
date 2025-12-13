@@ -11,10 +11,11 @@
 
     session_start();
 
-    if (!isset($_SESSION['rol']) || $_SESSION['rol'] != 'usuario') {
-        header("Location: index.php");
-        exit();
-    } ?>
+    if (!isset($_SESSION['usuario'])) {
+        header("Location: ../index.php");
+        exit;
+    }
+    ?>
 </head>
 
 <body>

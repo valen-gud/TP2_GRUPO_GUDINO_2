@@ -7,15 +7,15 @@
     <title>Capri Shoes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/estilos_sobreNosotros.css">
-    
-<?php //vista solo de usuiarios compradores ------------
 
-session_start();
+    <?php //vista solo de usuiarios compradores ------------
 
-if (!isset($_SESSION['rol']) || $_SESSION['rol'] != 'usuario') {
-    header("Location: index.php");
-    exit();
-} ?>
+    session_start();
+
+    if (!isset($_SESSION['usuario'])) {
+        header("Location: ../index.php");
+        exit;
+    } ?>
 
 
 

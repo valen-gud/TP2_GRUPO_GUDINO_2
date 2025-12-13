@@ -30,39 +30,26 @@
                 </video>
             </div>
             <div class="overlay"></div>
-            <h1 class="tituloLogin">Bienvenido a Capri Shoes</h1>
-            <div class="contenedorLogin">
+            <h1 class="tituloLogin mt-5">Bienvenido a Capri Shoes</h1>
+            <div class="contenedorLogin mt-5">
 
                 <form class="formularioLogin text-center m-5" action="./actions/login.php" method="POST">
 
                     <label class="form-label mt-3" for="email">Email</label>
                     <input class="form-control" type="email" placeholder="ejemplo@ejemplo.com" required id="email" name="email">
 
-                    <label class="form-label mt-3" for="passwor">Contraseña</label>
+                    <label class="form-label mt-3" for="password">Contraseña</label>
                     <input
-                        class="form-control" type="password" id="password" name="password" required minlength="8" placeholder="Mínimo 8 caracteres" pattern="(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}">
-                    <small class="text-muted">
-                        Debe contener al menos una letra, un número y un caracter especial.
-                    </small>
-
-                    <label class="form-label mt-3">¿Querés ingresar como?</label>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="rol" id="rol_usuario" value="usuario" required>
-                        <label class="form-check-label" for="rol_usuario">Comprador</label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="rol" id="rol_admin" value="admin">
-                        <label class="form-check-label" for="rol_admin">Administrador</label>
-                    </div>
+                        class="form-control" type="password" id="password" name="password" required minlength="8" placeholder="********" pattern="(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}">
+                   
 
                     <div class="d-flex gap-3 justify-content-center mt-4">
                         <input class="btn botonCapri" type="submit" value="Ingresar">
                     </div>
+                    <a class="btn botonRegistrarme" href="./views/registro.php">Registrarme</a>
                 </form>
-
-
+                
+                
 
             </div>
         </section>

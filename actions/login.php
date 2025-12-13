@@ -1,16 +1,33 @@
-<?php // verifica el rol, redirige y guarda sesion
+<?php
 session_start();
+require_once "../class/conexion.php";
+
+// crear conexión
+$conexion = new Conexion();
+$pdo = $conexion->getConexion();
 
 $email = $_POST['email'];
 $password = $_POST['password'];
-$rol = $_POST['rol'];
 
-$_SESSION['usuario'] = $email;
-$_SESSION['rol'] = $rol;
+$sql = "SELECT * FROM usuarios WHERE email = '$email'";
+$stmt = $pdo->query($sql);
+$usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if ($rol === 'admin') {
-    header("Location: ../views/admin.php");
-} else {
-    header("Location: ../views/shop.php");
+if ($usuario) {
+
+    if ($password == $usuario['password']) {
+
+        $_SESSION['usuario'] = $usuario['email'];
+        $_SESSION['rol'] = $usuario['rol'];
+
+        if ($usuario['rol'] == 1) {
+            header("Location: ../views/admin/admin.php");
+        } else {
+            header("Location: ../views/shop.php");
+        }
+        exit;
+    }
 }
+
+header("Location: ../views/404.php");
 exit;
