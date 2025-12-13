@@ -1,0 +1,15 @@
+body{
+    background-color:  rgba(69, 69, 69, 0.218);
+}
+
+.botonCapriAdmin {
+    color: white;
+    background-color: rgb(168, 84, 247);
+    border-color: rgb(185, 144, 224);
+    margin-bottom: 10px;
+
+    &:hover {
+        background-color: rgb(207, 184, 227);
+        border-color: rgb(207, 184, 227);
+    }
+}
