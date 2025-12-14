@@ -1,4 +1,4 @@
-<!DOCTYPE html> <!-- INDEX actualzado el 11/12 PARA EL FINAL-->
+<!DOCTYPE html> 
 <html lang="es">
 
 <head>

@@ -15,32 +15,95 @@ $pdo = $conexion->getConexion();
 $producto = $pdo->query("SELECT * FROM productos WHERE id = $id")->fetch();
 ?>
 
-<h2>Editar producto</h2>
+<!DOCTYPE html>
+<html lang="es">
 
-<form action="../../actions/producto_actualizar.php" method="POST" enctype="multipart/form-data">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar producto</title>
+    <link rel="shortcut icon" href="../../favicon2.ico.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/estilos_productos_admin.css">
+    <link rel="stylesheet" href="../../css/estilos_productos_editar_admin.css">
+    <link rel="stylesheet" href="../../css/estilos_nav_admin.css">
+    <link rel="stylesheet" href="../../css/estilos_footer_admin.css">
+</head>
 
-    <input type="hidden" name="id" value="<?= $producto['id'] ?>">
+<body>
 
-    <label>Nombre</label><br>
-    <input type="text" name="nombre" value="<?= $producto['nombre'] ?>"><br><br>
+    <header>
+        <?php require_once "../../componentes/nav_admin.php"; ?>
+    </header>
+    <main class="container my-5">
 
-    <label>Descripción</label><br>
-    <textarea name="descripcion"><?= $producto['descripcion'] ?></textarea><br><br>
+        <h2 class="text-center">Editar producto</h2>
 
-    <label>Precio</label><br>
-    <input type="number" name="precio" value="<?= $producto['precio'] ?>"><br><br>
+        <div>
+            <a class="btn botonVolverAdmin"  href="productos_admin.php">Volver atrás</a>
+        </div>
 
-    <label>Imagen actual</label><br>
-    <img src="../../img/<?= $producto['imagen_url'] ?>" width="150"><br><br>
+        <hr class="mt-3">
 
-    <label>Cambiar imagen (opcional)</label><br>
-    <input type="file" name="imagen"><br><br>
+        <div class="mt-5 row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card cardEditar">
+                    <div class="card-body">
 
-    <input type="hidden" name="imagen_actual" value="<?= $producto['imagen_url'] ?>">
+                        <form action="../../actions/producto_actualizar.php" method="POST" enctype="multipart/form-data">
 
-    <button type="submit">Actualizar</button>
+                            <input type="hidden" name="id" value="<?= $producto['id'] ?>">
+                            <input type="hidden" name="imagen_actual" value="<?= $producto['imagen_url'] ?>">
 
-</form>
+                            <div class="mb-3">
+                                <label class="form-label">Nombre</label>
+                                <input type="text" name="nombre" class="form-control"
+                                    value="<?= $producto['nombre'] ?>" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Descripción</label>
+                                <textarea name="descripcion" class="form-control" rows="4" required><?= $producto['descripcion'] ?></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Precio</label>
+                                <input type="number" name="precio" class="form-control"
+                                    value="<?= $producto['precio'] ?>" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Imagen actual</label><br>
+                                <img src="../../img/<?= $producto['imagen_url'] ?>"
+                                    class="img-fluid rounded border"
+                                    style="max-width: 200px;">
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label">Cambiar imagen (opcional)</label>
+                                <input type="file" name="imagen" class="form-control">
+                            </div>
+
+                                <button type="submit" class="btn botonActualizar">
+                                    Actualizar producto
+                                </button>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
 
 
-<a href="productos_admin.php">Volver</a>
+    <footer class="mt-5 py-4 footer">
+        <?php require_once "../../componentes/footer_admin.php" ?>
+    </footer>
+
+</body>
+
+</html>

@@ -13,7 +13,7 @@ $pdo = $conexion->getConexion();
 $usuarios = $pdo->query("SELECT name, email, rol, created_at FROM usuarios");
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -35,25 +35,35 @@ $usuarios = $pdo->query("SELECT name, email, rol, created_at FROM usuarios");
     <main>
         <h1 class="text-center mt-5">Usuarios registrados</h1>
 
-        <table border="1" cellpadding="10">
-            <tr>
-                <th>Nombre</th>
-                <th>Email</th>
-                <th>Rol</th>
-                <th>Fecha</th>
-            </tr>
+        <div class="mt-5">
+            <a class="btn botonVolverAdmin" href="admin.php">Volver al panel</a>
+        </div>
 
-            <?php while ($u = $usuarios->fetch(PDO::FETCH_ASSOC)) { ?>
+        <hr class="mt-3">
+
+        <table class="container table table-dark table-striped table-hover align-middle mt-5">
+            <thead class="table-dark">
                 <tr>
-                    <td><?= $u['name'] ?></td>
-                    <td><?= $u['email'] ?></td>
-                    <td><?= $u['rol'] == 1 ? 'Admin' : 'Usuario' ?></td>
-                    <td><?= $u['created_at'] ?></td>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Rol</th>
+                    <th>Fecha</th>
                 </tr>
-            <?php } ?>
+            </thead>
+            <tbody>
+
+                <?php while ($u = $usuarios->fetch(PDO::FETCH_ASSOC)) { ?>
+                    <tr>
+                        <td><?= $u['name'] ?></td>
+                        <td><?= $u['email'] ?></td>
+                        <td><?= $u['rol'] == 1 ? 'Admin' : 'Usuario' ?></td>
+                        <td><?= $u['created_at'] ?></td>
+                    </tr>
+                <?php } ?>
+
+            </tbody>
         </table>
 
-        <a href="admin.php">⬅ Volver</a>
     </main>
 
     <footer class="mt-5 py-4 footer">

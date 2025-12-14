@@ -1,0 +1,15 @@
+.cardEditar{
+    box-shadow: 3px 3px 10px gray;
+}
+
+.botonActualizar {
+    color: rgb(5, 5, 5);
+    background-color: rgb(104, 200, 48);
+    border-color: rgb(104, 200, 48);
+    border-radius: 50px;
+
+    &:hover {
+        background-color: rgb(115, 177, 78);
+        border-color: rgb(115, 177, 78);
+    }
+}

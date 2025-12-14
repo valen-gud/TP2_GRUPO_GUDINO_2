@@ -41,4 +41,15 @@
             }
         }
     }
+
+    .boton404Usuario {
+        text-decoration: none;
+        color: rgb(124, 5, 235);
+        text-align: center;
+        font-size: 1.2rem;
+
+        &:hover {
+            color: rgba(124, 5, 235, 0.378);
+        }
+    }
 }

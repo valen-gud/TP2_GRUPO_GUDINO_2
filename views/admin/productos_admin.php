@@ -33,28 +33,66 @@ $productos = $pdo->query("SELECT * FROM productos");
         <?php require_once "../../componentes/nav_admin.php"; ?>
     </header>
 
-    <main>
+    <main class="container my-5">
         <h1 class="text-center mt-5">Administrar productos</h1>
 
-        <a href="producto_nuevo.php">➕ Agregar producto</a>
-        <hr>
+        <div class="mt-5">
+            <a class="btn botonAgregar" href="producto_nuevo.php"> Agregar producto</a>
+            <a class="btn botonVolverAdmin"  href="admin.php">Volver al panel</a>
+        </div>
 
-        <?php while ($p = $productos->fetch(PDO::FETCH_ASSOC)) { ?>
-            <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
-                <h4><?= $p['nombre'] ?></h4>
-                <img src="../../img/<?= $p['imagen_url'] ?>" width="120">
-                <p><?= $p['descripcion'] ?></p>
-                <p><b>Precio:</b> $<?= $p['precio'] ?></p>
+        <hr class="mt-3">
 
-                <a href="producto_editar.php?id=<?= $p['id'] ?>">✏ Editar</a> |
-                <a href="../../actions/producto_eliminar.php?id=<?= $p['id'] ?>"
-                    onclick="return confirm('¿Seguro querés eliminar este producto?')">
-                    🗑 Eliminar
-                </a>
-            </div>
-        <?php } ?>
+        <table class="container table table-dark table-striped table-hover align-middle mt-5">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Imagen del producto</th>
+                    <th>Nombre del producto</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
 
-        <a href="admin.php">⬅ Volver al panel</a>
+                <?php while ($p = $productos->fetch(PDO::FETCH_ASSOC)) { ?>
+                    <tr>
+                        <td><?= $p['id'] ?></td>
+
+                        <td>
+                            <img src="../../img/<?= $p['imagen_url'] ?>" width="60">
+                        </td>
+
+                        <td><?= $p['nombre'] ?></td>
+
+                        <td>
+                            <?= strlen($p['descripcion']) > 60
+                                ? substr($p['descripcion'], 0, 60) . '...'
+                                : $p['descripcion']; ?>
+                        </td>
+
+                        <td>$<?= $p['precio'] ?></td>
+
+                        <td>
+                            <a href="producto_editar.php?id=<?= $p['id'] ?>"
+                                class="btn btn-sm botonEditar">
+                                Editar
+                            </a>
+
+                            <a href="../../actions/producto_eliminar.php?id=<?= $p['id'] ?>"
+                                class="btn btn-sm btn-danger"
+                                onclick="return confirm('¿Seguro querés eliminar este producto?')">
+                                Eliminar
+                            </a>
+                        </td>
+                    </tr>
+                <?php } ?>
+
+            </tbody>
+        </table>
+
+
 
 
     </main>

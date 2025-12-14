@@ -10,14 +10,20 @@ if ($_SESSION['rol'] != 1) {
 $nombre = $_POST['nombre'];
 $descripcion = $_POST['descripcion'];
 $precio = $_POST['precio'];
-$imagen = $_POST['imagen_url'];
+$imagen = $_FILES['imagen']['name'];
+$tmp = $_FILES['imagen']['tmp_name'];
+
+move_uploaded_file($tmp, "../img/" . $imagen);
 
 $conexion = new Conexion();
 $pdo = $conexion->getConexion();
 
+// guarda el  producto nuevo
 $sql = "INSERT INTO productos (nombre, descripcion, precio, imagen_url)
-        VALUES ('$nombre', '$descripcion', '$precio', '$imagen')";
+        VALUES ('$nombre', '$descripcion', $precio, '$imagen')";
 
 $pdo->query($sql);
 
+
 header("Location: ../views/Admin/productos_admin.php");
+exit;

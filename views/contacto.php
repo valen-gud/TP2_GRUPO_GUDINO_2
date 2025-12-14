@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capri Shoes</title>
+    <title>Contacto</title>
+     <link rel="shortcut icon" href="../favicon.ico.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/estilos_contacto.css">
     <?php //vista solo de usuiarios compradores ------------
@@ -25,7 +26,7 @@
 
     <main>
         <H1 class="text-center mt-4 mb-4">CONTACTANOS</H1>
-        <form class="text-center m-5" action="./actions/contacto_acc.php" method="POST">
+        <form class="text-center m-5" action="../actions/contacto_acc.php" method="POST">
             <label class="form-label" for="nombre">Nombre completo</label><br>
             <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Nombre y Apellido" required minlength="4"><br>
 
@@ -39,7 +40,7 @@
             <textarea class="form-control" id="mensaje" name="mensaje" placeholder="Hola!..." rows="4" required minlength="6"></textarea><br>
 
             <div>
-                <input class="btn btnEnviar mt-4" type="submit" value="Enviar">
+                <input class="btn btnCapri mt-4" type="submit" value="Enviar">
             </div>
             <div>
                 <input class="btn btnBorrar mt-4" type="reset" value="Borrar">

@@ -16,6 +16,7 @@
     .botonLogout {
         color: #6c757d;
         border-color: #6c757d6e;
+        border-radius: 50px;
 
         &:hover {
             color: rgb(185, 144, 224);

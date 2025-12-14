@@ -1,3 +1,38 @@
-body{
-    background-color:  rgba(69, 69, 69, 0.218);
-}   
+body {
+    background-color: rgba(69, 69, 69, 0.218);
+}
+
+.botonEditar {
+    color: rgb(0, 0, 0);
+    background-color: rgb(247, 235, 129);
+    border-color: rgb(247, 235, 129);
+
+    &:hover {
+        background-color: rgb(217, 209, 136);
+        border-color: rgb(217, 209, 136);
+    }
+}
+
+.botonAgregar {
+    color: rgb(5, 5, 5);
+    background-color: rgb(104, 200, 48);
+    border-color: rgb(104, 200, 48);
+    border-radius: 50px;
+
+    &:hover {
+        background-color: rgb(115, 177, 78);
+        border-color: rgb(115, 177, 78);
+    }
+}
+
+.botonVolverAdmin {
+    color: #000000;
+    border-color: #46494b;
+    margin-left: 20px;
+    border-radius: 50px;
+    
+    &:hover {
+        color:#6c757d;
+        border-color: #6c757d;
+    }
+}
