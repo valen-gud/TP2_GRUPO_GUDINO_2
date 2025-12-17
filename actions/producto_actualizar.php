@@ -26,6 +26,6 @@ $sql = "UPDATE productos
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$nombre, $descripcion, $precio, $imagen, $id]);
 
-header("Location: ../views/Admin/productos_admin.php");
+header("Location: ../views/admin/productos_admin.php");
 exit;
 ?>

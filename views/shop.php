@@ -25,17 +25,14 @@ try {
     $totalProductos = count($productoModel->obtenerProductos());
     $totalPaginas = ceil($totalProductos / $limite);
 
-    // ⭐ Si la página no existe → 404
     if ($pagina < 1 || $pagina > $totalPaginas) {
         mostrarError404();
     }
 
-    // ⭐ Si la consulta falla → 404
     if (!$productos) {
         mostrarError404();
     }
 } catch (Exception $e) {
-    // ⭐ Error en conexión o consulta → 404
     mostrarError404();
 }
 ?>
@@ -59,9 +56,9 @@ try {
     </header>
 
     <main>
-        <H1 class="text-center mt-4 mb-4">HOLA COMPRADOR</H1>
+        <H1 class="text-center mt-5 mb-4">HOLA COMPRADOR</H1>
 
-        <div class="container mt-4">
+        <div class="container mt-5">
             <div class="row justify-content-center">
                 <?php if (isset($productos) && !empty($productos)) { ?>
                     <?php foreach ($productos as $producto) { ?>

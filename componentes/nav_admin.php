@@ -4,7 +4,7 @@
 <nav class="barraDeNavegacion navbar navbar-expand-lg ">
   <div class="container-fluid">
     <a class="navbar-brand divLogo" href="admin.php">
-      <img class="imgLogo" src="/proyecto/img/admin_logo.png" alt="logo_admin">
+      <img class="imgLogo" src="/proyecto/img/adminLogo.png" alt="logo_admin">
     </a>
     <div>
       <ul class="nav justify-content-end  text-white">

@@ -14,4 +14,4 @@ $pdo = $conexion->getConexion();
 
 $pdo->query("DELETE FROM productos WHERE id = $id");
 
-header("Location: ../views/Admin/productos_admin.php");
+header("Location: ../views/admin/productos_admin.php");

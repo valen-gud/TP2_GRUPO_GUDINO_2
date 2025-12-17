@@ -25,5 +25,5 @@ $sql = "INSERT INTO productos (nombre, descripcion, precio, imagen_url)
 $pdo->query($sql);
 
 
-header("Location: ../views/Admin/productos_admin.php");
+header("Location: ../views/admin/productos_admin.php");
 exit;

@@ -17,7 +17,7 @@ section.nosotras {
     border-radius: 5px;
 }
 
-/* Responsive: en mobile sí pasan a columna */
+
 @media (max-width: 768px) {
     section.nosotras {
         flex-direction: column;

@@ -1,4 +1,4 @@
-<?php //PARA EL FINAL --------------
+<?php 
 
 require_once 'conexion.php';
 
